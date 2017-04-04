@@ -1,0 +1,52 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #EEE;
+  color: #333;
+  font-family: sans-serif;
+}
+
+#window-frame {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  background: #545454;
+}
+
+#window-frame > button {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  padding: 0px;
+  margin: 4px;
+  -webkit-app-region: no-drag;
+}
+
+#window-frame > button > svg {
+  background: none;
+  border-radius: 8px;
+}
+
+#window-frame > button:hover > svg {
+  background: rgba(255,255,255,0.2);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
+}
+
+#window-frame > button:active > svg {
+  background: rgba(255,255,255,0.2);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
+}
+
+#window-body {
+  padding: 8px;
+}
+
+#quit-all {
+  background: #EC3512;
+}
+
+#minimize, #maximize {
+  background: #AAA;
+  margin-left: 0px !important;
+}

@@ -1,0 +1,33 @@
+<html>
+  <script type="text/javascript">
+    const ipc = require('electron').ipcRenderer
+    const BrowserWindow = require('electron').remote.BrowserWindow
+
+    let count = 0
+
+    ipc.on('get-next-int', function(event, fromWindowId) {
+      const fromWindow = BrowserWindow.fromId(fromWindowId)
+      count = count + 1
+      fromWindow.webContents.send('return-next-int', count)
+      window.close()
+    })
+
+    /*let interval
+    let count = 0
+
+    ipc.on('get-next-int', function (event, fromWindowId) {
+      const fromWindow = BrowserWindow.fromId(fromWindowId)
+      interval = setInterval(() => {
+        count = count + 1
+        fromWindow.webContents.send('return-next-int', count)
+      }, 1000)
+      window.close()
+    })
+
+    ipc.on('finish-next-int', function(event) {
+      console.log('closed counter window')
+      window.close()
+    }*/
+
+  </script>
+</html>

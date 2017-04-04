@@ -2,15 +2,57 @@
 <html lang="en">
 <head>
 	<title>Window Title</title>
+	<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
+	<div id="window-frame">
+	<button id="quit-all">
+		<svg width="16" height="16">
+		<path d="M5,5 11,11" stroke="#eee" stroke-width="2px"/>
+		<path d="M5,11 11,5" stroke="#eee" stroke-width="2px"/>
+		</svg>
+	</button>
+	<button id="minimize">
+		<svg width="16" height="16">
+		<path d="M5,8 11,8" stroke="#eee" stroke-width="2px"/>
+		</svg>
+	</button>
+	<button id="maximize">
+		<svg width="16" height="16">
+		<path d="M5,5 11,5" stroke="#eee" stroke-width="2px"/>
+		<path d="M11,5 11,11" stroke="#eee" stroke-width="2px"/>
+		<path d="M11,11 5,11" stroke="#eee" stroke-width="2px"/>
+		<path d="M5,11 5,5" stroke="#eee" stroke-width="2px"/>
+		</svg>
+	</button>
+
+	</div>
+	<div id="window-body">
 	<div id="app"></div>
+	<button id="bleep">bleep</button>
+	</div>
 </body>
 <script>
 	const remote = require('electron').remote;
 	const main = remote.require('./main.js');
+	document.getElementById('quit-all')
+		.addEventListener('click', () => {
+			main.quitAll()
+		});	
+	document.getElementById('minimize')
+		.addEventListener('click', () => {
+			main.minimize()
+		});
+	document.getElementById('maximize')
+		.addEventListener('click', () => {
+			main.toggleMaximize()
+		});
+
 
 	// React Code
 	require('./src/client.min.js')
+
+	// Electron Renderer
+	require('./renderer.js')
 </script>
 </html>
