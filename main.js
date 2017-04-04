@@ -14,7 +14,8 @@ function createWindow () {
     backgroundColor: '#eee',
     width: 800,
     height: 600,
-    frame: false
+    frame: false,
+    icon: 'assets/icons/icon.png'
   })
   g.win.loadURL(`file://${__dirname}/index.html`)
   g.win.on('closed', () => {
