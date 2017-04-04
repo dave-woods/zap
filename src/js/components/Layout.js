@@ -2,6 +2,7 @@ import React from 'react'
 
 import Counter from './Counter.js'
 import Counter2 from './Counter2.js'
+import Button from './Button.js'
 
 export default class Layout extends React.Component {
   constructor (props) {
@@ -15,6 +16,7 @@ export default class Layout extends React.Component {
       <p>This is a piece of text</p>
       <Counter />
       <Counter2 />
+      <Button onClick={() => { window.alert('click!') }}>Button Text</Button>
     </div>)
   }
 }
