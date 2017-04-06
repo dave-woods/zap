@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Counter from './Counter.js'
-import Counter2 from './Counter2.js'
-import Button from './Button.js'
+import Counter from '../components/Counter.js'
+import Button from '../components/Button.js'
 
 export default class Layout extends React.Component {
   constructor (props) {
@@ -11,11 +10,11 @@ export default class Layout extends React.Component {
   }
 
   render () {
-    return (<div className='main'>
+    return (<div id='layout' className='main'>
       <h1>Layout Component</h1>
       <p>This is a piece of text</p>
       <Counter />
-      <Counter2 />
+      <Button></Button>
       <Button>Default</Button>
       <Button type='error' onClick={() => { window.alert('click!') }}>Error</Button>
       <Button type='success' onClick={() => { window.alert('click!') }}>Success</Button>

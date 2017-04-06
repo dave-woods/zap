@@ -28,6 +28,14 @@ app.on('ready', function () {
   globalShortcut.register('F12', function () {
     g.win.webContents.toggleDevTools()
   })
+  globalShortcut.register('Esc', function () {
+    if (g.win.escPressed) {
+      app.quit()
+    } else {
+      g.win.escPressed = true
+      setTimeout(() => { g.win.escPressed = false }, 1000)
+    }
+  })
 })
 app.on('will-quit', function () {
   globalShortcut.unregisterAll()

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Layout from './components/Layout.js'
+import Layout from './pages/Layout.js'
 
 const app = document.getElementById('app')
 

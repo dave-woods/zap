@@ -8,7 +8,7 @@ Button.propTypes = {
   wiggle: React.PropTypes.bool
 }
 
-function Button ({onClick, type = 'default', wiggle, children = ''}) {
+function Button ({onClick, type = 'default', wiggle, children = '\xa0'}) {
   return <button onClick={onClick} className={'button-' + type + (wiggle ? ' wiggle' : '')}>{children}</button>
 }
 

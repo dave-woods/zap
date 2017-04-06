@@ -10,6 +10,12 @@ button[class^="button-"] {
 	outline: none;
 	cursor: pointer;
 	transition: all 0.2s;
+	max-width: 10em;
+	min-width: 3em;
+	max-height: 5em;
+	min-height: 3em;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 button[class^="button-"].wiggle:hover {
