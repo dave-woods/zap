@@ -1,0 +1,81 @@
+button[class^="button-"] {
+	border: 0.2em solid transparent;
+	border-radius: 0.2em;
+	text-align: center;
+	font-size: 16px;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.8em 1.6em;
+	margin: 0.1em;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+button[class^="button-"].wiggle:hover {
+	animation: wiggle 0.3s linear;
+}
+
+button[class^="button-"]:active {
+	transform: scale(0.97);
+}
+
+@keyframes wiggle {
+	0% {
+		transform: none;
+	}
+	10% {
+		transform: rotateZ(2deg);
+	}
+	30% {
+		transform: rotateZ(-2deg);
+	}
+	50% {
+		transform: rotateZ(2deg);
+	}
+	70% {
+		transform: rotateZ(-2deg);
+	}
+	100% {
+		transform: none;
+	}
+}
+
+.button-default {
+	background-color: #D9D9DB;
+}
+
+.button-error {
+	background-color: #F44E42;
+}
+
+.button-success {
+	background-color: #38B763;
+	color: white;
+}
+
+.button-warning {
+	background-color: #FCD144;
+}
+
+.button-info {
+	background-color: #3871E2;
+	color: white;
+}
+
+/*
+.button-default:active {
+	color: #D9D9DB;
+	border-color: #D9D9DB;
+}
+
+.button-error:active {
+	color: #F44E42;
+	border-color: #F44E42;
+}
+
+.button-success:active {
+	color: #38B763;
+	border-color: #38B763;
+}
+*/

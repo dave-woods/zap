@@ -21,12 +21,15 @@
   },
   "scripts": {
     "start": "electron .",
-    "bundle": "NODE_ENV=production webpack"
+    "bundle": "NODE_ENV=production webpack",
+	"go": "webpack; electron ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^0.28.0",
     "electron": "^1.6.2",
-    "standard": "^9.0.2"
+    "standard": "^9.0.2",
+    "style-loader": "^0.16.1"
   }
 }

@@ -1,7 +1,15 @@
 import React from 'react'
 
-function Button (props) {
-  return <button onclick={props.onClick} className={props.type || 'defaultBtn'}>{props.children}</button>
+import '../../../assets/styles/Button.css'
+
+Button.propTypes = {
+  onClick: React.PropTypes.func,
+  type: React.PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
+  wiggle: React.PropTypes.bool
+}
+
+function Button ({onClick, type = 'default', wiggle, children = ''}) {
+  return <button onClick={onClick} className={'button-' + type + (wiggle ? ' wiggle' : '')}>{children}</button>
 }
 
 export default Button
