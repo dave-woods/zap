@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import '../../../assets/styles/Button.css'
 
 Button.propTypes = {
-  onClick: React.PropTypes.func,
-  type: React.PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
-  wiggle: React.PropTypes.bool,
-  primary: React.PropTypes.bool
+  onClick: PropTypes.func,
+  type: PropTypes.oneOf(['default', 'success', 'warning', 'error', 'info']),
+  wiggle: PropTypes.bool,
+  primary: PropTypes.bool
 }
 
 function Button ({onClick, type = 'default', wiggle, primary, children = '\xa0'}) {
