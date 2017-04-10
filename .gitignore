@@ -1,3 +1,5 @@
 node_modules/
 
 *.xcf
+
+src/client.min.js
