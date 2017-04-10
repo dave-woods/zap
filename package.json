@@ -32,5 +32,9 @@
     "electron": "^1.6.2",
     "standard": "^9.0.2",
     "style-loader": "^0.16.1"
+  },
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/dave-woods/zap.git"
   }
 }
