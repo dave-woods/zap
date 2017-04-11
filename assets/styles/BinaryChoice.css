@@ -1,0 +1,45 @@
+.checkbox, .slider {
+	height: 1.1em;
+	background-color: #D9D9DB;
+	margin: 0.2em;
+	padding: 0.15em;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox > div, .slider > div {
+	flex: 0 1 auto;
+	height: 1.1em;
+	width: 1.1em;
+}
+
+.checked {
+	background-color: #4286F4;
+}
+
+.checkbox {
+	width: 1.1em;
+	border-radius: 0.2em;
+	justify-content: center;
+}
+
+.checkbox > div {
+	border-radius: 0.2em;
+	background-color: transparent;
+}
+
+.slider {
+	width: 2.5em;
+	border-radius: 1.1em;
+	justify-content: flex-start;
+}
+
+.slider.checked {
+	justify-content: flex-end;
+}
+
+.slider > div {
+	border-radius: 1.1em;
+	background-color: #FFFFFF;
+}
