@@ -22,11 +22,28 @@
 	width: 1.1em;
 	border-radius: 0.2em;
 	justify-content: center;
+	transition: all 0.2s;
 }
 
 .checkbox > div {
 	border-radius: 0.2em;
 	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox:active {
+	transform: scale(0.97);
+}
+
+.checkbox.checked > div:after {
+	content: "\2713";
+	font-weight: bold;
+	font-size: 1.4em;
+	color: white;
+	width: 1em;
+	height: 1em;
 }
 
 .slider {
