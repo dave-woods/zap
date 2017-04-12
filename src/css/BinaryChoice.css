@@ -1,11 +1,13 @@
 .checkbox, .slider {
-	height: 1.1em;
+/*	height: 1.1em;*/
 	background-color: #D9D9DB;
-	margin: 0.2em;
-	padding: 0.15em;
-	display: flex;
+	margin: 0.1em;
+	padding: 0.2em;
+	display: inline-flex;
 	align-items: center;
 	cursor: pointer;
+	font-size: 15px;
+	min-height: 1em;
 }
 
 .checkbox > div, .slider > div {
@@ -23,6 +25,7 @@
 	border-radius: 0.2em;
 	justify-content: center;
 	transition: all 0.2s;
+	border: 0.2em solid transparent;
 }
 
 .checkbox > div {
@@ -38,7 +41,7 @@
 .checkbox.checked > div:after {
 	content: "\2713";
 	font-weight: bold;
-	font-size: 1.4em;
+	font-size: 1.4rem;
 	color: white;
 	width: 1em;
 	height: 1em;
