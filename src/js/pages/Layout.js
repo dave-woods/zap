@@ -3,6 +3,7 @@ import React from 'react'
 import Counter from '../components/Counter.js'
 import Button from '../components/Button.js'
 import BinaryChoice from '../components/BinaryChoice.js'
+import Form from '../components/Form.js'
 
 export default class Layout extends React.Component {
   constructor (props) {
@@ -22,8 +23,9 @@ export default class Layout extends React.Component {
       <Button primary type='warning' onClick={() => { window.alert('click!') }}>Warning</Button>
       <Button type='info' wiggle onClick={() => { window.alert('click!') }}>Info</Button>
       <br />
-      <BinaryChoice type='checkbox' />
-      <BinaryChoice type='slider' />
+      <div style={{display: 'flex', alignItems: 'center'}}><BinaryChoice type='checkbox' /> <BinaryChoice type='slider' /></div>
+      <br />
+      <Form />
     </div>)
   }
 }
