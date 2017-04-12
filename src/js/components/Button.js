@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import '../../../assets/styles/Button.css'
+import '../../css/Button.css'
 
 Button.propTypes = {
   onClick: PropTypes.func,

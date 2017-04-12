@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import '../../../assets/styles/BinaryChoice.css'
+import '../../css/BinaryChoice.css'
 
 export default class BinaryChoice extends React.Component {
   constructor (props) {
