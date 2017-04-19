@@ -14,12 +14,17 @@ export default class BinaryChoice extends React.Component {
   handleClick (e) {
     e.persist()
     this.setState({checked: !this.state.checked}, () => {
-      this.props.onChange(e)
+      try {
+        this.props.onChange(e)
+      } catch (err) {
+        // fail silently
+        // console.log('No handler available', err.message)
+      }
     })
   }
 
   render () {
-    return (<div data-value={this.state.checked} id={this.props.id} onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
+    return (<div onKeyPress={(e) => { if (e.which === 32 || e.which === 13) e.target.click() }} tabIndex='0' data-value={this.state.checked} id={this.props.id} onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
       <div />
     </div>)
   }
