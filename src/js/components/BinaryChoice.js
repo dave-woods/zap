@@ -12,14 +12,14 @@ export default class BinaryChoice extends React.Component {
   }
 
   handleClick (e) {
-    this.setState(prevState => {
-      return {checked: !prevState.checked}
+    e.persist()
+    this.setState({checked: !this.state.checked}, () => {
+      this.props.onChange(e)
     })
-    this.props.onChange(e)
   }
 
   render () {
-    return (<div id={this.props.id} onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
+    return (<div data-value={this.state.checked} id={this.props.id} onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
       <div />
     </div>)
   }

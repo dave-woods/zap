@@ -10,17 +10,11 @@ export default class Layout extends React.Component {
     super(props)
     this.state = {}
 
-    this.handleFormChange = this.handleFormChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
-  handleFormChange (e) {
-    console.log(e, 'Handled Form Change')
-  }
-
-  handleFormSubmit (e) {
-    e.preventDefault()
-    console.log(e.target, 'Submitted')
+  handleFormSubmit (formState) {
+    console.log(formState)
   }
 
   render () {
@@ -40,7 +34,7 @@ export default class Layout extends React.Component {
       <Form submit={{type: 'button', handler: this.handleFormSubmit}}>
         <Field type='text' />
         <Field type='long-text' />
-        <Field type='checkbox' />
+        <Field checked type='checkbox' />
         <Field type='slider' />
       </Form>
     </div>)
