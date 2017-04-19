@@ -3,12 +3,24 @@ import React from 'react'
 import Counter from '../components/Counter.js'
 import Button from '../components/Button.js'
 import BinaryChoice from '../components/BinaryChoice.js'
-import Form from '../components/Form.js'
+import {Form, Field} from '../components/Form.js'
 
 export default class Layout extends React.Component {
   constructor (props) {
     super(props)
     this.state = {}
+
+    this.handleFormChange = this.handleFormChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  }
+
+  handleFormChange (e) {
+    console.log(e, 'Handled Form Change')
+  }
+
+  handleFormSubmit (e) {
+    e.preventDefault()
+    console.log(e.target, 'Submitted')
   }
 
   render () {
@@ -25,7 +37,12 @@ export default class Layout extends React.Component {
       <br />
       <div style={{display: 'flex', alignItems: 'center'}}><BinaryChoice type='checkbox' /> <BinaryChoice type='slider' /></div>
       <br />
-      <Form />
+      <Form submit={{type: 'button', handler: this.handleFormSubmit}}>
+        <Field type='text' />
+        <Field type='long-text' />
+        <Field type='checkbox' />
+        <Field type='slider' />
+      </Form>
     </div>)
   }
 }

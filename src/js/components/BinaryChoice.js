@@ -11,14 +11,15 @@ export default class BinaryChoice extends React.Component {
     }
   }
 
-  handleClick () {
+  handleClick (e) {
     this.setState(prevState => {
       return {checked: !prevState.checked}
     })
+    this.props.onChange(e)
   }
 
   render () {
-    return (<div onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
+    return (<div id={this.props.id} onClick={this.handleClick.bind(this)} className={this.props.type + (this.state.checked ? ' checked' : '')}>
       <div />
     </div>)
   }
@@ -26,5 +27,7 @@ export default class BinaryChoice extends React.Component {
 
 BinaryChoice.propTypes = {
   type: PropTypes.oneOf(['checkbox', 'slider']).isRequired,
-  checked: PropTypes.bool
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+  id: PropTypes.string
 }
