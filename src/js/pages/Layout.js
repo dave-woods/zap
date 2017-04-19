@@ -32,10 +32,11 @@ export default class Layout extends React.Component {
       <div style={{display: 'flex', alignItems: 'center'}}><BinaryChoice type='checkbox' /> <BinaryChoice type='slider' /></div>
       <br />
       <Form submit={{type: 'button', handler: this.handleFormSubmit}}>
-        <Field type='text' />
+        <Field placeholder='holding' type='text' />
         <Field type='long-text' />
         <Field checked type='checkbox' />
         <Field type='slider' />
+        <Field type='dropdown' options={[{value: 'one'}, {value: 'two', text: 'Two'}]} />
       </Form>
     </div>)
   }

@@ -12,14 +12,16 @@ export class Dropdown extends React.Component {
   }
 
   handleChange (e) {
-    this.setState({value: e.target.value})
-    this.props.handleChange(e)
+    e.persist()
+    this.setState({value: e.target.value}, () => {
+      this.props.onChange(e)
+    })
   }
 
   render () {
     return (
-      <select value={this.state.value} onChange={this.handleChange}>
-        <option selected value='' disabled />
+      <select id={this.props.id} value={this.state.value} onChange={this.handleChange} className='dropdown'>
+        <option value='' disabled />
         {this.props.children}
       </select>
     )
@@ -27,7 +29,9 @@ export class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  handleChange: PropTypes.func.isRequired
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  id: PropTypes.string
 }
 
 export function Option (props) {
