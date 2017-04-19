@@ -7,7 +7,7 @@ button[class^="button-"] {
 	display: inline-block;
 	padding: 0.2em 0.4em;
 	margin: 0.1em;
-	outline: none;
+	/* outline: none; */
 	cursor: pointer;
 	transition: all 0.2s;
 	max-width: 10em;

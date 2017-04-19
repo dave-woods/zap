@@ -1,3 +1,9 @@
 .form {
 	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+.form > * {
+	flex: 0 1 auto;
 }
